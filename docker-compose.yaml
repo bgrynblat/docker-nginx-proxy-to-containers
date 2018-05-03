@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nginx:
+    build: "."
+    environment:
+      - ENVS=qat.*;qat;http://localhost:3000 uat.*;uat;http://localhost:3000 staging.*;staging;http://localhost:3000
+      - DEFAULT=http://localhost:3000
+    ports:
+      - 8000:80
+    volumes:
+      - .:/code
+
